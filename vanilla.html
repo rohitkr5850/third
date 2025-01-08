@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanilla App</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Virtual DOM Performance Demo</h1>
+  <button id="vanillaBtn">Change Title (Vanilla JS)</button>
+  <button id="reactBtn">Change Title (React)</button>
+  <p id="vanillaCount">Vanilla JS Updates: 0</p>
+  <p id="reactCount">React Updates: 0</p>
+
+  <script>
+    let vanillaUpdates = 0;
+
+    document.getElementById('vanillaBtn').addEventListener('click', () => {
+      vanillaUpdates++;
+      document.title = `Vanilla App - ${vanillaUpdates}`;
+      document.getElementById('vanillaCount').textContent = `Vanilla JS Updates: ${vanillaUpdates}`;
+    });
+
+    document.getElementById('reactBtn').addEventListener('click', () => {
+      alert('This button is only functional in the React app!');
+    });
+  </script>
+</body>
+</html>
